@@ -36,6 +36,23 @@ The main objectives of this project are:
 
 ![Network Topology](images/topology.png)
 
+### OSPF Neighbor Verification
+
+![OSPF Neighbor Verification](images/ospf-neighbor.png)
+
+### Routing Table Verification
+
+![Routing Table Verification](images/routing-table.png)
+
+### OSPF Cost Testing
+
+![OSPF Cost Testing](images/ospf-cost.png)
+
+### Connectivity Testing
+
+![Connectivity Testing](images/ping-test.png)
+
+
 The network contains three routers connected in a linear topology.
 
 ```text
