@@ -1,77 +1,58 @@
 # Enterprise Network Routing with OSPF
 
-## Overview
+## 1. Project Overview
 
-This project demonstrates a small enterprise network
-designed and configured using Cisco Packet Tracer.
+This project demonstrates the design, configuration, and testing of a small enterprise network using Cisco Packet Tracer.
 
-The network consists of three routers connecting three
-separate LANs. OSPF is used as the dynamic routing
-protocol to exchange routing information between the
-routers.
+The network consists of three Cisco routers, three switches, and three PCs. The routers are connected using point-to-point links, while each router provides connectivity to a separate LAN.
 
-## Network Topology
+OSPF (Open Shortest Path First) is configured as the dynamic routing protocol to allow the routers to automatically exchange routing information.
+
+The project includes IP addressing, OSPF configuration, OSPF neighbor verification, routing-table verification, OSPF cost testing, connectivity testing, and link-failure testing.
+
+---
+
+## 2. Project Objectives
+
+The main objectives of this project are:
+
+- Design a small enterprise network topology.
+- Configure Cisco routers and switches.
+- Configure IPv4 addressing.
+- Configure LAN and point-to-point networks.
+- Configure OSPF dynamic routing.
+- Configure unique OSPF Router IDs.
+- Establish OSPF neighbor relationships.
+- Verify dynamically learned routes.
+- Test end-to-end network connectivity.
+- Demonstrate the effect of OSPF interface cost.
+- Test network behavior during a link failure.
+- Verify network recovery after restoring a failed link.
+- Document router configurations and verification results.
+
+---
+
+## 3. Network Topology
 
 ![Network Topology](images/topology.png)
 
-## Objectives
-
-- Configure IPv4 addressing
-- Configure routers and switches
-- Configure OSPF dynamic routing
-- Configure OSPF Router IDs
-- Verify OSPF neighbor relationships
-- Verify routing tables
-- Test end-to-end connectivity
-- Test OSPF interface cost
-- Test link failure and recovery
-
-## Devices Used
-
-| Device | Model | Quantity |
-|---|---|---:|
-| Router | Cisco 2911 | 3 |
-| Switch | Cisco 2960-24TT | 3 |
-| PC | PC-PT | 3 |
-
-## IP Addressing
-
-| Device | Interface | IP Address | Subnet Mask |
-|---|---|---|---|
-| R1 | G0/0 | 192.168.10.1 | 255.255.255.0 |
-| R1 | G0/1 | 192.168.1.1 | 255.255.255.252 |
-| R2 | G0/0 | 192.168.1.2 | 255.255.255.252 |
-| R2 | G0/1 | 192.168.2.1 | 255.255.255.252 |
-| R2 | G0/2 | 192.168.20.1 | 255.255.255.0 |
-| R3 | G0/0 | 192.168.2.2 | 255.255.255.252 |
-| R3 | G0/1 | 192.168.30.1 | 255.255.255.0 |
-
-## PC Addressing
-
-| PC | IP Address | Default Gateway |
-|---|---|---|
-| PC1 | 192.168.10.10 | 192.168.10.1 |
-| PC2 | 192.168.20.10 | 192.168.20.1 |
-| PC3 | 192.168.30.10 | 192.168.30.1 |
-
-## OSPF Configuration
-
-OSPF process 1 was configured on all routers.
-
-| Router | Router ID |
-|---|---|
-| R1 | 1.1.1.1 |
-| R2 | 2.2.2.2 |
-| R3 | 3.3.3.3 |
-
-All routers operate in OSPF Area 0.
-
-## OSPF Verification
-
-The following commands were used:
+The network contains three routers connected in a linear topology.
 
 ```text
-show ip ospf neighbor
-show ip route
-show ip ospf interface
-show ip protocols
+                         ENTERPRISE NETWORK
+
+       LAN 1                  WAN Links                    LAN 3
+
+       PC1                                             PC3
+        |                                               |
+        |                                               |
+       S1                                               S3
+        |                                               |
+        |                                               |
+       R1 ---------------- R2 ---------------- R3
+        |                  |                  |
+        |                  |                  |
+   192.168.10.0/24   192.168.20.0/24    192.168.30.0/24
+
+          R1-R2: 192.168.1.0/30
+          R2-R3: 192.168.2.0/30
