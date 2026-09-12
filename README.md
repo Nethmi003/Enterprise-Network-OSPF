@@ -31,8 +31,9 @@ The main objectives of this project are:
 - Document router configurations and verification results.
 
 ---
+## Project Screenshots
 
-## 3. Network Topology
+### Network Topology
 
 ![Network Topology](images/topology.png)
 
@@ -51,6 +52,7 @@ The main objectives of this project are:
 ### Connectivity Testing
 
 ![Connectivity Testing](images/ping-test.png)
+
 
 
 The network contains three routers connected in a linear topology.
