@@ -34,7 +34,7 @@ The main objectives of this project are:
 
 ## 3. Network Topology
 
-![Network Topology](images/topology.PNG)
+![Network Topology](images/topology.png)
 
 The network contains three routers connected in a linear topology.
 
